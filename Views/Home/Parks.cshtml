@@ -1,21 +1,50 @@
 ﻿@model ecapi.Models.eci.RootObject
 
-<h1>Parks</h1>
+<h1>Info</h1>
 <hr />
 
 @foreach (var item in Model.data)
 {
+<div>
+    <h3>
+        @Html.DisplayFor(modelItem => item.category)
+    </h3>
     <div>
-        <h3>
-            @Html.DisplayFor(modelItem => item.id)
-        </h3>
-        <div>
-            @Html.DisplayFor(modelItem => item.name)
-        </div>
-       
+        @Html.DisplayFor(modelItem => item.category2)
     </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.category2_value)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.decimal_display)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.farmtype)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.report)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.year)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.median)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.statistic)
+    </div>
+    <div>
+        @Html.DisplayFor(modelItem => item.state)
+    </div>
+
+</div>
     <br />
 }
+<ul>
+    <li>Student Id: @Model.info.total</li>
+    <li>Student Name: @Model.status</li>
+    
+</ul>
 
 <script>
     alertDbSave(@ViewBag.dbSuccessComp);

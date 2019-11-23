@@ -22,7 +22,7 @@ namespace ecapi.Controllers
         public IActionResult Parks()
         {
             Api_Handler_manager webHandler = new Api_Handler_manager();
-            RootObject rootobject = webHandler.GetParks();
+            RootObject rootobject = webHandler.GetDetails();
 
             return View(rootobject);
         }

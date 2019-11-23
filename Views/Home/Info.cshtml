@@ -1,0 +1,47 @@
+﻿@model ecapi.Models.eci.RootObject
+
+<h1>Parks</h1>
+<hr />
+
+@foreach (var item in Model.data)
+{
+    <div>
+        <h3>
+            @Html.DisplayFor(modelItem => item.category)
+        </h3>
+        <div>
+            @Html.DisplayFor(modelItem => item.category2)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.category2_value)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.decimal_display)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.farmtype)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.report)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.year)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.median)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.statistic)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.state)
+        </div>
+
+    </div>
+    <br />
+}
+
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ecapi.Models.category.Base_Datum>
+<h2>Category Details</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                name
+            </th>
+            <th>
+                sequence
+            </th>
+            <th>
+                description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sequence)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+            </tr>
+        }
+        @{
+            Model.Count();
+        }
+
+
+    </tbody>
+</table>

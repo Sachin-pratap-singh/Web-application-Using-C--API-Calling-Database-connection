@@ -2,7 +2,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Agriculture</h2>
+<h2>Agricultural details</h2>
 <hr />
 
 <div>
@@ -11,11 +11,22 @@
         <br />This  request returns income statements for years 2015 and 2016 of commercial farms across all States.
         <br />
         <br />
+        <a asp-area="" asp-controller="Home" asp-action="Parks">Income statement</a>
         <br />
-        The <a asp-area="" asp-controller="Home" asp-action="Parks">Income statement</a>
+        <br />
+        <br />This request returns the category information.
         <br />
         <br />
-    </p>
+        <a asp-area="" asp-controller="Home" asp-action="Category">Category</a>
+        <br />
+        <br />
+        <br /> Following link provides the information about different variables of the api data_base.
+        <br />
+        <br />
+        <a asp-area="" asp-controller="Home" asp-action="Variable">Variable</a>
+        <br />
+        <br />
+        </p>
 
    
 </div>

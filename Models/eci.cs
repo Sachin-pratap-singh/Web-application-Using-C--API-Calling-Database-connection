@@ -32,6 +32,7 @@ namespace ecapi.Models
         public class Datum
         {
             [Key]
+            public string variable_id { get; set; }
             public int year { get; set; }
             public string state { get; set; }
             public string report { get; set; }
@@ -40,7 +41,7 @@ namespace ecapi.Models
             public string category_value { get; set; }
             public string category2 { get; set; }
             public string category2_value { get; set; }
-            public string variable_id { get; set; }
+           
             public string variable_name { get; set; }
             public int variable_sequence { get; set; }
             public int? variable_level { get; set; }

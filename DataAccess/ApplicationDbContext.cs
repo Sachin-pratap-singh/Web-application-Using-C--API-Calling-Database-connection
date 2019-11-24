@@ -11,6 +11,6 @@ namespace ecapi
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Datum>Datums { get; set; }
+        public DbSet<Datum>Datums{ get; set; }
     }
 }

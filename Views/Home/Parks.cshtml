@@ -21,6 +21,20 @@
         <th>
             variable_name
         </th>
+        <th>
+            category
+        </th>
+        <th>
+            category2
+        </th>
+        <th>
+            median
+        </th>
+        <th>
+            statistic
+        </th>
+        
+       
     </tr>
 </thead>
 
@@ -44,6 +58,22 @@
         <td>
             @Html.DisplayFor(modelItem => item.variable_name)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.median)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statistic)
+        </td>
+        
+        
+
+
     </tr>
     }
     @{
@@ -62,6 +92,8 @@
 </script>
 <tr>
     <td>
-        <a id="dbopt" asp-controller="Home" asp-action="PopulateSymbols">Save</a>
+        <a asp-area="" asp-controller="Home" asp-action="PopulateData">Save</a>
+        <!--   <a id="dbopt" asp-controller="Home" asp-action="PopulateData">Save</a>-->
+
     </td>
 </tr>

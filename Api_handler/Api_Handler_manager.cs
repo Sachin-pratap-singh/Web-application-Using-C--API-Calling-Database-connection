@@ -11,19 +11,23 @@ namespace ecapi.Api_handler
     public class Api_Handler_manager
     {
         //static string BASE_URL = "https://api.ers.usda.gov/data";
+
+        public ApplicationDbContext dbContext;
         static string BASE_URL = "https://api.ers.usda.gov/data";
         static string API_KEY = "B77RPajCgNtGRkD2Sob9pLJxyI6bslvgV1C3HDcm"; //Add your API key here inside ""
 
         HttpClient httpClient;
 
-        public Api_Handler_manager()
+        public Api_Handler_manager(ApplicationDbContext context)
         {
+            dbContext = context;
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Add("X-Api-Key", API_KEY);
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
+        // public  List<Datum> GetDetails()
         public RootObject GetDetails()
         {
             //string NATIONAL_PARK_API_PATH = BASE_URL + "/arms/state"; //?limit=20
@@ -31,6 +35,7 @@ namespace ecapi.Api_handler
             string Api_Data = "";
 
             RootObject rootobject = null;
+           // List<Datum>datum = null;
 
             httpClient.BaseAddress = new Uri(API_PATH);
 
@@ -47,7 +52,8 @@ namespace ecapi.Api_handler
                 if (!Api_Data.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                   rootobject = JsonConvert.DeserializeObject<RootObject>(Api_Data);
+                    //   rootobject = JsonConvert.DeserializeObject<List<Datum>>(Api_Data);
+                    rootobject = JsonConvert.DeserializeObject<RootObject>(Api_Data);
                 }
             }
             catch (Exception e)
@@ -55,8 +61,9 @@ namespace ecapi.Api_handler
                 // This is a useful place to insert a breakpoint and observe the error message
                 Console.WriteLine(e.Message);
             }
-
+            
             return rootobject;
         }
     }
 }
+

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace ecapi.Models
 {
@@ -18,8 +20,10 @@ namespace ecapi.Models
             public int record_count { get; set; }
         }
 
-        public class Info
+       public class Info
         {
+            [Key]
+          
             public Timing timing { get; set; }
             public string result_coverage { get; set; }
             public Total total { get; set; }
@@ -27,6 +31,7 @@ namespace ecapi.Models
 
         public class Datum
         {
+            [Key]
             public int year { get; set; }
             public string state { get; set; }
             public string report { get; set; }
@@ -39,8 +44,8 @@ namespace ecapi.Models
             public string variable_name { get; set; }
             public int variable_sequence { get; set; }
             public int? variable_level { get; set; }
-            public object variable_group { get; set; }
-            public object variable_group_id { get; set; }
+            //public object variable_group { get; set; }
+            //public object variable_group_id { get; set; }
             public string variable_unit { get; set; }
             public string variable_description { get; set; }
             public bool variable_is_invalid { get; set; }

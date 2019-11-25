@@ -13,9 +13,10 @@ using static ecapi.Models.variable;
 
 namespace ecapi.Controllers
 {
+    
     public class HomeController : Controller
     {
-        //
+        
         ApplicationDbContext dbContext;
 
 

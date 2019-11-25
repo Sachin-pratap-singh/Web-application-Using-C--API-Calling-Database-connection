@@ -7,10 +7,11 @@ using static ecapi.Models.eci;
 
 namespace ecapi
 {
-    public class ApplicationDbContext : DbContext
+  public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Datum>Datums{ get; set; }
     }
+    
 }

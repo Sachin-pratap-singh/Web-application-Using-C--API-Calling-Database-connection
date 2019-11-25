@@ -1,99 +1,105 @@
 ﻿
 
-@model IEnumerable<ecapi.Models.eci.Datum>
-
-<h2>Agri</h2>
-<table class="table">
-<thead>
-    <tr>
-        <th>
-            variable_id
-        </th>
-        <th>
-            Year
-        </th>
-        <th>
-            state
-        </th>
-        <th>
-            farmtype
-        </th>
-        <th>
-            variable_name
-        </th>
-        <th>
-            category
-        </th>
-        <th>
-            category2
-        </th>
-        <th>
-            median
-        </th>
-        <th>
-            statistic
-        </th>
-        
-       
-    </tr>
-</thead>
-
-<tbody>
-
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.variable_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.year)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.farmtype)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.variable_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.median)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.statistic)
-        </td>
-        
-        
+<h2>Income report</h2>
 
 
-    </tr>
-    }
-    @{
-        Model.Count();
-    }
+
+        @model IEnumerable<ecapi.Models.eci.Datum>
 
 
-</tbody>
-</table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        variable_id
+                    </th>
+                    <th>
+                        Year
+                    </th>
+                    <th>
+                        state
+                    </th>
+                    <th>
+                        farmtype
+                    </th>
+                    <th>
+                        variable_name
+                    </th>
+                    <th>
+                        category
+                    </th>
+                    <th>
+                        category2
+                    </th>
+                    <th>
+                        median
+                    </th>
+                    <th>
+                        statistic
+                    </th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.variable_id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.state)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.farmtype)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.variable_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.category2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.median)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.statistic)
+                        </td>
 
 
 
 
-<script>
-    
-</script>
-<tr>
-    <td>
-        <a asp-area="" asp-controller="Home" asp-action="PopulateData">Save</a>
-        <!--   <a id="dbopt" asp-controller="Home" asp-action="PopulateData">Save</a>-->
+                    </tr>
+                }
+                        @{
+                            Model.Count();
+                        }
 
-    </td>
-</tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+                <script>
+
+                </script>
+                <tr>
+                    <td>
+                        <a asp-area="" asp-controller="Home" asp-action="PopulateData">Save</a>
+                        <!--   <a id="dbopt" asp-controller="Home" asp-action="PopulateData">Save</a>-->
+
+                    </td>
+                </tr>

@@ -10,6 +10,7 @@ using static ecapi.Models.category;
 using static ecapi.Models.eci;
 using Newtonsoft.Json;
 using static ecapi.Models.variable;
+
 namespace ecapi.Controllers
 {
     public class HomeController : Controller
@@ -24,7 +25,9 @@ namespace ecapi.Controllers
         static string API_KEY = "B77RPajCgNtGRkD2Sob9pLJxyI6bslvgV1C3HDcm"; //Add your API key here inside ""
 
           HttpClient httpClient;
-   
+
+        public ApplicationDbContext DbContext { get => dbContext; set => dbContext = value; }
+
         public HomeController(ApplicationDbContext context)
         {
             dbContext = context;
@@ -185,7 +188,7 @@ namespace ecapi.Controllers
 
             List<Base_Datum>base_datums =rootobject1.data;
 
-            TempData["datums"] = JsonConvert.SerializeObject(base_datums);
+            //TempData["datums"] = JsonConvert.SerializeObject(base_datums);
 
             return View(base_datums);
         }
@@ -197,6 +200,10 @@ namespace ecapi.Controllers
             TempData["datumsa"] = JsonConvert.SerializeObject(datumsa);
 
             return View(datumsa);
+        }
+        public IActionResult Aboutus()
+        {
+            return View();
         }
 
 

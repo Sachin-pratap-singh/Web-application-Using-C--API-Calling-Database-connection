@@ -27,7 +27,7 @@ namespace ecapi.Controllers
           HttpClient httpClient;
 
         public ApplicationDbContext DbContext { get => dbContext; set => dbContext = value; }
-
+        //
         public HomeController(ApplicationDbContext context)
         {
             dbContext = context;
